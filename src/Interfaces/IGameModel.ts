@@ -1,0 +1,14 @@
+import { GameState, TurnOrderMode } from '../Enumerations';
+import { Player } from '../Game/Player';
+import { IButton } from './IButton';
+
+export interface IGameModel {
+  Players?: Player[];
+  RegisteredButtons?: IButton[];
+  GameDuration: number;
+  RoundsToPlay: number;
+  CurrentRound: number;
+  CurrentPlayerName: string;
+  TurnOrderMode: TurnOrderMode;
+  CurrentGameState: GameState;
+}
