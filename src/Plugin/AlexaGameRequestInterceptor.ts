@@ -17,7 +17,7 @@ export class AlexaGameRequestInterceptor implements RequestInterceptor {
   async process(handlerInput: HandlerInput): Promise<void> {
 
     // Request - Game requirements
-    const requestAttributes = <IRequestAttributes>handlerInput.attributesManager.getSessionAttributes();
+    const requestAttributes = <IRequestAttributes>handlerInput.attributesManager.getRequestAttributes();
     requestAttributes.gameRequirements = this.gameRequirements;
 
     // Session - Create Rollcall model
