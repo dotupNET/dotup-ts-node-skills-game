@@ -98,44 +98,44 @@ export abstract class AlexaGame<T extends GameModel> extends GameEngineInput {
     return [downLight];
   }
 
-  protected validateConfigration(): void {
-    const r = NodeSkill.requirements;
+  // protected validateConfigration(): void {
+  //   const r = NodeSkill.requirements;
 
-    // Button validation
-    this.model.Players.forEach(player => {
-      if (player.buttons.length < r.numberOfButtonsPerButtonGroupMin) {
-        throw new Error(`you need at least ${r.numberOfButtonsPerButtonGroupMin} registered buttons per player`);
-      }
-    });
+  //   // Button validation
+  //   this.model.Players.forEach(player => {
+  //     if (player.buttons.length < r.numberOfButtonsPerButtonGroupMin) {
+  //       throw new Error(`you need at least ${r.numberOfButtonsPerButtonGroupMin} registered buttons per player`);
+  //     }
+  //   });
 
-    this.model.Players.forEach(player => {
-      if (player.buttons.length > r.numberOfButtonsPerButtonGroupMax) {
-        throw new Error(`you can use a maximum of ${r.numberOfButtonsPerButtonGroupMax} registered buttons per player`);
-      }
-    });
+  //   this.model.Players.forEach(player => {
+  //     if (player.buttons.length > r.numberOfButtonsPerButtonGroupMax) {
+  //       throw new Error(`you can use a maximum of ${r.numberOfButtonsPerButtonGroupMax} registered buttons per player`);
+  //     }
+  //   });
 
-    // Player validation
-    if (this.model.Players.length !== this.model.NumberOfPlayer) {
-      throw new Error('number of players not corret');
-    }
+  //   // Player validation
+  //   if (this.model.Players.length !== this.model.NumberOfPlayer) {
+  //     throw new Error('number of players not corret');
+  //   }
 
-    if (this.model.Players.length > r.numberOfPlayerMax) {
-      throw new Error(`you can use a maximum of ${r.numberOfPlayerMax} player`);
-    }
+  //   if (this.model.Players.length > r.numberOfPlayerMax) {
+  //     throw new Error(`you can use a maximum of ${r.numberOfPlayerMax} player`);
+  //   }
 
-    if (this.model.Players.length < r.numberOfPlayerMin) {
-      throw new Error(`you need at least ${r.numberOfPlayerMin} player`);
-    }
+  //   if (this.model.Players.length < r.numberOfPlayerMin) {
+  //     throw new Error(`you need at least ${r.numberOfPlayerMin} player`);
+  //   }
 
-    if (this.model.RoundsToPlay > r.roundsToPlayMax) {
-      throw new Error(`you can use a maximum of ${r.roundsToPlayMax} rounds to play`);
-    }
+  //   if (this.model.RoundsToPlay > r.roundsToPlayMax) {
+  //     throw new Error(`you can use a maximum of ${r.roundsToPlayMax} rounds to play`);
+  //   }
 
-    if (this.model.RoundsToPlay < r.roundsToPlayMin) {
-      throw new Error(`you need at least ${r.roundsToPlayMin} rounds to play`);
-    }
+  //   if (this.model.RoundsToPlay < r.roundsToPlayMin) {
+  //     throw new Error(`you need at least ${r.roundsToPlayMin} rounds to play`);
+  //   }
 
-  }
+  // }
 
   /**
    * Ask player for correct button

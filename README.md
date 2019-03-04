@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/dotupNET/dotup-ts-node-skills-game.svg?branch=master)](https://travis-ci.org/dotupNET/dotup-ts-node-skills-game)
 
 # dotup-ts-node-skills-game
-Helper for building alexa skills
+Helper for building alexa games
 
 With tslint, jasmine, travis, typedoc and gh-pages integration.
 

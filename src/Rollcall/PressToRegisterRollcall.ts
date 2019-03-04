@@ -1,19 +1,19 @@
 import { services } from 'ask-sdk-model';
-import { IRequestContext, NodeSkill } from 'dotup-ts-node-skills';
+import { IRequestContext } from 'dotup-ts-node-skills';
 import { AnimationBuilder } from '../Builder/AnimationBuilder';
 import { GadgetBuilder } from '../Builder/GadgetBuilder';
 import { RollCallBuilder } from '../Builder/RollcallBuilder';
 import { ButtonColor, TriggerEvent } from '../Enumerations';
 import { IButton } from '../Interfaces/IButton';
+import { IGameRequirements } from '../Interfaces/IGameRequirements';
 import { Rollcall } from './Rollcall';
 import { RollcallState } from './RollcallState';
 
 export class PressToRegisterRollcall extends Rollcall {
   private tmpRollcallDuration: number;
 
-  constructor(context: IRequestContext) {
-    super(context);
-    this.tmpRollcallDuration = NodeSkill.requirements.rollcallDuration;
+  constructor(context: IRequestContext, requirements: IGameRequirements) {
+    super(context, requirements);
   }
 
   protected createStartDirective(): void {
@@ -63,8 +63,8 @@ export class PressToRegisterRollcall extends Rollcall {
         if (this.isValid()) {
           this.StopRollcall();
         } else {
-          this.context.Speak(`Drücke mindestens ${NodeSkill.requirements.numberOfButtonsMin} Buttons.`);
-          this.context.Speak(`Und höchstens ${NodeSkill.requirements.numberOfButtonsMax} Buttons.`);
+          this.context.Speak(`Drücke mindestens ${this.requirements.numberOfButtonsMin} Buttons.`);
+          this.context.Speak(`Und höchstens ${this.requirements.numberOfButtonsMax} Buttons.`);
           this.tmpRollcallDuration *= 2;
           this.createStartDirective();
           this.model.state = RollcallState.RepeatRollcall;
@@ -111,11 +111,11 @@ export class PressToRegisterRollcall extends Rollcall {
 
     const withIds = this.model.rollcallButtons.filter(item => item.id !== undefined);
 
-    if (withIds.length < NodeSkill.requirements.numberOfButtonsMin) {
+    if (withIds.length < this.requirements.numberOfButtonsMin) {
       return false;
     }
 
-    if (withIds.length > NodeSkill.requirements.numberOfButtonsMax) {
+    if (withIds.length > this.requirements.numberOfButtonsMax) {
       return false;
     }
 

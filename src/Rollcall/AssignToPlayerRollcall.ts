@@ -1,25 +1,26 @@
 import { services } from 'ask-sdk-model';
-import { IRequestContext, NodeSkill } from 'dotup-ts-node-skills';
+import { IRequestContext } from 'dotup-ts-node-skills';
 import { AmazonSsmlBuilder } from 'dotup-ts-ssml-builder';
 import { AnimationBuilder } from '../Builder/AnimationBuilder';
 import { GadgetBuilder } from '../Builder/GadgetBuilder';
 import { RollCallBuilder } from '../Builder/RollcallBuilder';
 import { ButtonColor, TriggerEvent } from '../Enumerations';
 import { IButton } from '../Interfaces/IButton';
+import { IGameRequirements } from '../Interfaces/IGameRequirements';
 import { Rollcall } from './Rollcall';
 import { RollcallState } from './RollcallState';
 
 export class AssignToPlayerRollcall extends Rollcall {
 
-  constructor(context: IRequestContext) {
-    super(context);
+  constructor(context: IRequestContext, requirements: IGameRequirements) {
+    super(context, requirements);
   }
 
   protected createStartDirective(): void {
     const rollcallBuilder = new RollCallBuilder();
 
     const session = this.context.request.getSessionAttributes();
-    const buttonGroups = session.RollcallModel.rollcallButtonGroups;
+    const buttonGroups = session.rollcall.rollcallButtonGroups;
 
     const currentGroup = buttonGroups.find(group => {
       return group.buttons.some(button => {
@@ -43,7 +44,7 @@ export class AssignToPlayerRollcall extends Rollcall {
     // Get start directive
     const startDirective = rollcallBuilder.BuildButtonGroup(
       currentGroup.name, // EventNames.ButtonGroupPressed,
-      NodeSkill.requirements.rollcallDuration,
+      this.requirements.rollcallDuration,
       () => { this.context.SaveRequestId(); }
     );
 
@@ -60,7 +61,7 @@ export class AssignToPlayerRollcall extends Rollcall {
     this.context.Speak(sb);
 
     // this.context.Speak(`${currentGroup.name} drücke jetzt ${currentGroup.buttons.length} Buttons.`);
-    this.context.Speak(`Du hast ${NodeSkill.requirements.rollcallDuration / 1000} Sekunden zeit.`);
+    this.context.Speak(`Du hast ${this.requirements.rollcallDuration / 1000} Sekunden zeit.`);
     // this.context.Speak(`Wenn du fertig bist sage einfach ja.`);
     // this.context.Reprompt('hast du alle Buttons gedrückt?');
 
@@ -143,11 +144,11 @@ export class AssignToPlayerRollcall extends Rollcall {
         return button.id !== undefined;
       });
 
-      if (withIds.length < NodeSkill.requirements.numberOfButtonsPerButtonGroupMin) {
+      if (withIds.length < this.requirements.numberOfButtonsPerButtonGroupMin) {
         return true;
       }
 
-      if (withIds.length > NodeSkill.requirements.numberOfButtonsPerButtonGroupMax) {
+      if (withIds.length > this.requirements.numberOfButtonsPerButtonGroupMax) {
         return true;
       }
 

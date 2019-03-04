@@ -29,6 +29,11 @@ export * from './Interfaces/ITurnOrder';
 // LeaderBoard
 export * from './LeaderBoard/LeaderBoard';
 export * from './LeaderBoard/LeaderBoardItem';
+// Plugin
+export * from './Plugin/AlexaGamePlugin';
+export * from './Plugin/AlexaGameRequestInterceptor';
+export * from './Plugin/Extensions';
+export * from './Plugin/IAlexaGamePluginConfiguration';
 // Rollcall
 // export * from './Rollcall/AssignButtonsToPlayerRollcallHandler';
 // export * from './Rollcall/PressButtonsToRegisterRollcallHandler';

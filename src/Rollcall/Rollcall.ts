@@ -4,17 +4,20 @@ import { GadgetBuilder } from '../Builder/GadgetBuilder';
 import { RollCallBuilder } from '../Builder/RollcallBuilder';
 import { EventNames } from '../Enumerations';
 import { IButton } from '../Interfaces/IButton';
+import { IGameRequirements } from '../Interfaces/IGameRequirements';
 import { IRollcallModel } from './IRollcallModel';
 import { RollcallState } from './RollcallState';
 
 export abstract class Rollcall {
 
   protected readonly context: IRequestContext;
+  protected readonly requirements: IGameRequirements;
 
   readonly model: IRollcallModel;
 
-  constructor(context: IRequestContext) {
+  constructor(context: IRequestContext, requirements: IGameRequirements) {
     this.context = context;
+    this.requirements = requirements;
     this.model = this.loadModel();
   }
 
@@ -145,11 +148,11 @@ export abstract class Rollcall {
   private loadModel(): IRollcallModel {
     const session = this.context.request.getSessionAttributes();
 
-    if (session.RollcallModel === undefined) {
+    if (session.rollcall === undefined) {
       throw new Error('RollcallModel === undefined');
     }
 
-    return session.RollcallModel;
+    return session.rollcall;
   }
 
 }
