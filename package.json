@@ -40,7 +40,7 @@
     "dotup-ts-json-serializer": "0.0.4",
     "dotup-ts-types": "0.0.19",
     "dotup-ts-logger": "^0.0.13",
-    "dotup-ts-node-skills-workflows": "^0.0.5"
+    "dotup-ts-node-skills-workflows": "^0.0.6"
   },
   "peerDependencies": {
     "dotup-ts-node-skills": "^0.3.1"
