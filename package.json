@@ -1,6 +1,6 @@
 {
   "name": "dotup-ts-node-skills-game",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Develop alexa typescript games",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
