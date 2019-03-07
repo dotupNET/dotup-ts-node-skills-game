@@ -1,5 +1,5 @@
-import { IGameRequirements } from '../src/Interfaces/IGameRequirements';
-import { IRollcallModel } from '../src/Rollcall/IRollcallModel';
+import { IGameRequirements } from '../dist/Interfaces/IGameRequirements';
+import { IRollcallModel } from '../dist/Rollcall/IRollcallModel';
 
 declare module 'dotup-ts-node-skills/dist/Interfaces/ISessionAttributes' {
   interface ISessionAttributes {
