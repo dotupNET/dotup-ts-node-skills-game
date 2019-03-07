@@ -1,10 +1,11 @@
-import { IRequestContext, WorkflowHandler, WorkflowStepState } from 'dotup-ts-node-skills';
+import { IRequestContext } from 'dotup-ts-node-skills';
+import { WorkflowController, WorkflowHandler, WorkflowStepHandler, WorkflowStepState } from 'dotup-ts-node-skills-workflows';
 import { GameModel } from '../Game/GameModel';
 import { Rollcall } from './Rollcall';
 import { RollcallFactory } from './RollcallFactory';
 import { RollcallState } from './RollcallState';
 
-export class RollcallWorkflowAdapter extends WorkflowHandler<GameModel> {
+export class RollcallWorkflowAdapter extends WorkflowStepHandler<GameModel> {
   private readonly rollcallFactory: RollcallFactory;
 
   constructor(workflowName: string, rollcallFactory: RollcallFactory) {
@@ -12,34 +13,45 @@ export class RollcallWorkflowAdapter extends WorkflowHandler<GameModel> {
     this.rollcallFactory = rollcallFactory;
   }
 
-  async StartStep(context: IRequestContext): Promise<void> {
+  async StartStep(context: IRequestContext, wc: WorkflowController<GameModel>): Promise<void> {
     console.log('starting rollcall (PressButtonsToRegisterRollcallHandler)');
 
     const rollcall = this.rollcallFactory.getRollcall(context);
     rollcall.Start();
 
-    context.WorkflowStepState = this.getWorkflowStepStateFromRollcall(rollcall);
+    wc.getWorkflow().CurrentWorkflowStepState = this.getWorkflowStepStateFromRollcall(rollcall);
   }
 
   GameEngineInputHandlerEvent(context: IRequestContext): void {
     const rollcall = this.rollcallFactory.getRollcall(context);
     rollcall.GameEngineInputHandlerEvent();
+    const wc = context.request
+      .getRequestAttributes()
+      .getworkflowContext<GameModel>();
 
-    context.WorkflowStepState = this.getWorkflowStepStateFromRollcall(rollcall);
+    wc.controller.getWorkflow().CurrentWorkflowStepState = this.getWorkflowStepStateFromRollcall(rollcall);
   }
 
   YesIntent(context: IRequestContext): void {
     const rollcall = this.rollcallFactory.getRollcall(context);
     rollcall.YesIntent();
 
-    context.WorkflowStepState = this.getWorkflowStepStateFromRollcall(rollcall);
+    const wc = context.request
+      .getRequestAttributes()
+      .getworkflowContext<GameModel>();
+
+    wc.controller.getWorkflow().CurrentWorkflowStepState = this.getWorkflowStepStateFromRollcall(rollcall);
   }
 
   NoIntent(context: IRequestContext): void {
     const rollcall = this.rollcallFactory.getRollcall(context);
     rollcall.NoIntent();
 
-    context.WorkflowStepState = this.getWorkflowStepStateFromRollcall(rollcall);
+    const wc = context.request
+      .getRequestAttributes()
+      .getworkflowContext<GameModel>();
+
+    wc.controller.getWorkflow().CurrentWorkflowStepState = this.getWorkflowStepStateFromRollcall(rollcall);
   }
 
   getWorkflowStepStateFromRollcall(rollcall: Rollcall): WorkflowStepState {
