@@ -1,6 +1,6 @@
 {
   "name": "dotup-ts-node-skills-game",
-  "version": "0.0.12",
+  "version": "0.1.0",
   "description": "Develop alexa typescript games",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -43,10 +43,10 @@
     "dotup-ts-json-serializer": "0.0.4",
     "dotup-ts-types": "0.0.20",
     "dotup-ts-logger": "^0.0.13",
-    "dotup-ts-node-skills-workflows": "^0.0.8"
+    "dotup-ts-node-skills-workflows": "^0.1.0"
   },
   "peerDependencies": {
-    "dotup-ts-node-skills": "^0.3.2"
+    "dotup-ts-node-skills": "^0.3.4"
   },
   "devDependencies": {
     "dotup-ts-git-wrapper": "^1.0.0",

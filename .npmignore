@@ -1,4 +1,5 @@
 test/
+tools/
 coverage/
 src/
 secrets/
@@ -21,3 +22,4 @@ scripts/
 tsconfig.json
 tslint.json
 gruntfile.js
+.yo-rc.json
