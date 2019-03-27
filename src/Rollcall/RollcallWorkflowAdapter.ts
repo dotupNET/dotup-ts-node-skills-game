@@ -27,7 +27,7 @@ export class RollcallWorkflowAdapter extends WorkflowStepHandler<GameModel> {
     rollcall.GameEngineInputHandlerEvent();
     const wc = context.request
       .getRequestAttributes()
-      .getworkflowContext<GameModel>();
+      .getWorkflowContext<GameModel>();
 
     wc.controller.getWorkflow().CurrentWorkflowStepState = this.getWorkflowStepStateFromRollcall(rollcall);
   }
@@ -38,7 +38,7 @@ export class RollcallWorkflowAdapter extends WorkflowStepHandler<GameModel> {
 
     const wc = context.request
       .getRequestAttributes()
-      .getworkflowContext<GameModel>();
+      .getWorkflowContext<GameModel>();
 
     wc.controller.getWorkflow().CurrentWorkflowStepState = this.getWorkflowStepStateFromRollcall(rollcall);
   }
@@ -49,7 +49,7 @@ export class RollcallWorkflowAdapter extends WorkflowStepHandler<GameModel> {
 
     const wc = context.request
       .getRequestAttributes()
-      .getworkflowContext<GameModel>();
+      .getWorkflowContext<GameModel>();
 
     wc.controller.getWorkflow().CurrentWorkflowStepState = this.getWorkflowStepStateFromRollcall(rollcall);
   }

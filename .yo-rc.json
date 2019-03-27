@@ -1,0 +1,10 @@
+{
+  "generator-dotup-gulp": {
+    "promptValues": {
+      "sourcePath": "src",
+      "targetPath": "dist",
+      "testPath": "test",
+      "docsPath": "docs"
+    }
+  }
+}

@@ -14,6 +14,7 @@ export class PressToRegisterRollcall extends Rollcall {
 
   constructor(context: IRequestContext, requirements: IGameRequirements) {
     super(context, requirements);
+    this.tmpRollcallDuration = requirements.rollcallDuration;
   }
 
   protected createStartDirective(): void {

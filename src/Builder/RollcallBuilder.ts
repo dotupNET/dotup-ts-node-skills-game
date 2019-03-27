@@ -55,7 +55,7 @@ export class RollCallBuilder {
     });
 
     // Build button colors
-    const lights = this.SetButtons(timeout, this.proxies);
+    // const lights = this.SetButtons(timeout, this.proxies);
 
     // Add timeout
     const timeoutEvent = EventsBuilder.GetTimeoutEvent()
@@ -81,7 +81,7 @@ export class RollCallBuilder {
     // console.log('### ROLLCALL ###');
     // console.log(JSON.stringify(start, undefined, 2));
 
-    return [start, ...lights];
+    return [start];
   }
 
   BuildButtonGroup(eventName: string, timeout: number, saveRequestId: () => void): IDirective[] {
