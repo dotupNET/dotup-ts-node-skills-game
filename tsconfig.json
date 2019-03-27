@@ -19,10 +19,6 @@
       "es2017",
       "dom"
     ], /* Specify library files to be included in the compilation. */
-    "typeRoots": [
-      "node_modules/@types",
-      "typings"
-    ],
     "moduleResolution": "node",
     "allowJs": false, /* Allow javascript files to be compiled. */
     // "checkJs": true,                       /* Report errors in .js files. */

@@ -5,9 +5,11 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
     "release": "npm run clean-build && npm run test-mocha && git push && npm run gh-pages && npm publish",
     "clean-dist": "rimraf dist",
-    "clean-build": "rimraf dist && tsc",
+    "clean-build": "rimraf dist && npm run compile",
     "test-mocha": "node node_modules/mocha/bin/mocha --require ts-node/register test/*.test.ts --reporter spec",
     "test-jasmine": "jasmine-ts",
     "docs": "typedoc --mode file --out docs src --exclude \"**/*+(index|.spec|.test|.e2e).ts\"",
