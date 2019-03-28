@@ -38,12 +38,12 @@
     "ask-sdk-core": "^2.5.1",
     "ask-sdk-model": "^1.13.0",
     "ask-sdk-runtime": "2.4.0",
-    "dotup-ts-ssml-builder": "^1.0.0",
+    "dotup-ts-node-skills-workflows": "^0.1.0",
+    "dotup-ts-ssml-builder": "^1.0.3",
     "dotup-ts-internationalization": "1.0.7",
     "dotup-ts-json-serializer": "0.0.4",
-    "dotup-ts-types": "0.0.20",
-    "dotup-ts-logger": "^0.0.13",
-    "dotup-ts-node-skills-workflows": "^0.1.0"
+    "dotup-ts-types": "0.0.22",
+    "dotup-ts-logger": "^0.0.13"
   },
   "peerDependencies": {
     "dotup-ts-node-skills": "^0.3.4"
