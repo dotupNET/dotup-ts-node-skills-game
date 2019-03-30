@@ -1,6 +1,6 @@
 import { interfaces, services } from 'ask-sdk-model';
 import { IRequestContext } from 'dotup-ts-node-skills';
-import { EventNames } from '../Enumerations';
+import { EventNames } from '../Constants/Enumerations';
 
 export abstract class GameEngineInput {
 

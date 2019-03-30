@@ -1,4 +1,4 @@
-import { TurnOrderMode } from '../Enumerations';
+import { TurnOrderMode } from '../Constants/Enumerations';
 import { RollcallMode } from '../Rollcall/RollcallMode';
 
 export interface IGameRequirements {

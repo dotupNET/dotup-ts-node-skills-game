@@ -1,4 +1,4 @@
-import { ButtonColor, GameEngineDirectives, TriggerEvent } from '../Enumerations';
+import { ButtonColor, GameEngineDirectives, TriggerEvent } from '../Constants/Enumerations';
 import { IAnimation, IGadgetControllerDirectives } from '../Interfaces/IGadgetControler';
 // tslint:disable-next-line:max-line-length
 import { IEventsObject, IPatternRecognizerObject, IRecognizerObject, IStartInputHandlerDirective, IStopInputHandlerDirective } from '../Interfaces/IGameEngine';

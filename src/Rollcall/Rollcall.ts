@@ -2,7 +2,7 @@ import { services } from 'ask-sdk-model';
 import { IRequestContext } from 'dotup-ts-node-skills';
 import { GadgetBuilder } from '../Builder/GadgetBuilder';
 import { RollCallBuilder } from '../Builder/RollcallBuilder';
-import { EventNames } from '../Enumerations';
+import { EventNames } from '../Constants/Enumerations';
 import { IButton } from '../Interfaces/IButton';
 import { IGameRequirements } from '../Interfaces/IGameRequirements';
 import { IRollcallModel } from './IRollcallModel';

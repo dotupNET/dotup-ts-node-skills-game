@@ -1,6 +1,6 @@
 {
   "name": "dotup-ts-node-skills-game",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Develop alexa typescript games",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -14,7 +14,8 @@
     "test-jasmine": "jasmine-ts",
     "docs": "typedoc --mode file --out docs src --exclude \"**/*+(index|.spec|.test|.e2e).ts\"",
     "gh-pages": "rimraf docs && npm run docs && gh-pages -d docs",
-    "postversion": "git push && git push --tags",
+    "postpublish": "git tag -a v%npm_package_version% -m \"Release v%npm_package_version%\" && git push origin --tags",
+    "commit-release": "git commit -a -m \"Release v%npm_package_version%\" && git push && git tag -a v%npm_package_version% -m \"Release v%npm_package_version%\" && git push origin --tags",
     "npm-publish": "npm publish"
   },
   "repository": {
@@ -36,9 +37,9 @@
   "homepage": "https://github.com/dotupNET/dotup-ts-node-skills-game#readme",
   "dependencies": {
     "ask-sdk-core": "^2.5.1",
-    "ask-sdk-model": "^1.13.0",
+    "ask-sdk-model": "^1.14.0",
     "ask-sdk-runtime": "2.4.0",
-    "dotup-ts-node-skills-workflows": "^0.1.1",
+    "dotup-ts-node-skills-workflows": "^0.2.0",
     "dotup-ts-ssml-builder": "^1.0.3",
     "dotup-ts-internationalization": "1.0.7",
     "dotup-ts-json-serializer": "0.0.4",
@@ -46,7 +47,7 @@
     "dotup-ts-logger": "^0.0.13"
   },
   "peerDependencies": {
-    "dotup-ts-node-skills": "^0.3.5"
+    "dotup-ts-node-skills": "^0.3.6"
   },
   "devDependencies": {
     "dotup-ts-git-wrapper": "^1.0.0",
@@ -58,7 +59,7 @@
     "gulp-typedoc": "^2.2.2",
     "gulp-mocha": "^6.0.0",
     "del": "^4.0.0",
-    "dotup-ts-node-skills": "^0.3.5",
+    "dotup-ts-node-skills": "^0.3.6",
     "@types/express": "^4.16.1",
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.6",

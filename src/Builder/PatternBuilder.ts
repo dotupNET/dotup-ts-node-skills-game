@@ -1,5 +1,5 @@
 // tslint:disable:newline-before-return
-import { ButtonActionMode, ButtonColor } from '../Enumerations';
+import { ButtonActionMode, ButtonColor } from '../Constants/Enumerations';
 import { IPattern } from '../Interfaces/IGameEngine';
 
 export class PatternBuilder {

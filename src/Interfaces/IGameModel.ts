@@ -1,4 +1,4 @@
-import { GameState, TurnOrderMode } from '../Enumerations';
+import { GameState, TurnOrderMode } from '../Constants/Enumerations';
 import { Player } from '../Game/Player';
 import { IButton } from './IButton';
 

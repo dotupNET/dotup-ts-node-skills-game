@@ -4,7 +4,7 @@ import { AmazonSsmlBuilder } from 'dotup-ts-ssml-builder';
 import { AnimationBuilder } from '../Builder/AnimationBuilder';
 import { GadgetBuilder } from '../Builder/GadgetBuilder';
 import { RollCallBuilder } from '../Builder/RollcallBuilder';
-import { ButtonColor, TriggerEvent } from '../Enumerations';
+import { ButtonColor, TriggerEvent } from '../Constants/Enumerations';
 import { IButton } from '../Interfaces/IButton';
 import { IGameRequirements } from '../Interfaces/IGameRequirements';
 import { Rollcall } from './Rollcall';

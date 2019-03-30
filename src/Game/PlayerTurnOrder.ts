@@ -1,4 +1,4 @@
-import { GameState, TurnOrderMode } from '../Enumerations';
+import { GameState, TurnOrderMode } from '../Constants/Enumerations';
 import { IGameModel } from '../Interfaces/IGameModel';
 import { IPlayer } from '../Interfaces/IPlayer';
 import { ITurnOrder } from '../Interfaces/ITurnOrder';

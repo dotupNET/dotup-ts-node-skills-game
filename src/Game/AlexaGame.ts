@@ -5,7 +5,7 @@ import { AnimationBuilder } from '../Builder/AnimationBuilder';
 import { EventsBuilder } from '../Builder/EventsBuilder';
 import { GadgetBuilder } from '../Builder/GadgetBuilder';
 import { RecognizerBuilder } from '../Builder/RecognizerBuilder';
-import { ButtonColor, EventNames, GameState, TriggerEvent } from '../Enumerations';
+import { ButtonColor, EventNames, GameState, TriggerEvent } from '../Constants/Enumerations';
 import { IEventsObject, IRecognizerObject } from '../Interfaces/IGameEngine';
 import { ITurnOrder } from '../Interfaces/ITurnOrder';
 import { GameEngineInput } from './GameEngineInput';

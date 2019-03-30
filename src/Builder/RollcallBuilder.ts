@@ -1,6 +1,6 @@
 // tslint:disable
 import { ObjectTools } from 'dotup-ts-types';
-import { ButtonColor, TriggerEvent } from '../Enumerations';
+import { ButtonColor, TriggerEvent } from '../Constants/Enumerations';
 import { IEventsObject, IRecognizerObject } from '../Interfaces/IGameEngine';
 import { AnimationBuilder } from './AnimationBuilder';
 import { EventsBuilder } from './EventsBuilder';

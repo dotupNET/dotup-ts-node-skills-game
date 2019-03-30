@@ -1,6 +1,6 @@
 // tslint:disable:no-reserved-keywords
 import { IDirective } from 'dotup-ts-node-skills';
-import { TriggerEvent } from '../Enumerations';
+import { TriggerEvent } from '../Constants/Enumerations';
 
 /**
  * type: string; Must be set to GadgetController.SetLight.

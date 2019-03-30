@@ -1,4 +1,4 @@
-import { ButtonColor } from '../Enumerations';
+import { ButtonColor } from '../Constants/Enumerations';
 
 export interface IButton {
   id?: string;

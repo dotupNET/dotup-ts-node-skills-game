@@ -1,5 +1,5 @@
 // tslint:disable:newline-before-return
-import { AnchorMode, ButtonActionMode, ButtonColor, RecognizerType } from '../Enumerations';
+import { AnchorMode, ButtonActionMode, ButtonColor, RecognizerType } from '../Constants/Enumerations';
 import { IPattern, IPatternRecognizer, IRecognizer } from '../Interfaces/IGameEngine';
 
 // Define some animations that we'll use during roll call, to be played in various situations,

@@ -1,5 +1,5 @@
 import { JsonSerializable } from 'dotup-ts-json-serializer';
-import { GameState, TurnOrderMode } from '../Enumerations';
+import { GameState, TurnOrderMode } from '../Constants/Enumerations';
 import { IButton } from '../Interfaces/IButton';
 import { IGameModel } from '../Interfaces/IGameModel';
 import { Player } from './Player';

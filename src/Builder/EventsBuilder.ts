@@ -1,5 +1,5 @@
 // tslint:disable:newline-before-return
-import { EventNames, EventReportMode } from '../Enumerations';
+import { EventNames, EventReportMode } from '../Constants/Enumerations';
 import { IEvents, IEventsObject } from '../Interfaces/IGameEngine';
 
 export class EventsBuilder {

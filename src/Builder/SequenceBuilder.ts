@@ -1,4 +1,4 @@
-import { ButtonColor } from '../Enumerations';
+import { ButtonColor } from '../Constants/Enumerations';
 import { ISequence } from '../Interfaces/IGadgetControler';
 
 export class SequenceBuilder {

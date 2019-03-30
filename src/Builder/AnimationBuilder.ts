@@ -1,4 +1,4 @@
-import { ButtonColor } from '../Enumerations';
+import { ButtonColor } from '../Constants/Enumerations';
 import { IAnimation, ISequence } from '../Interfaces/IGadgetControler';
 
 const targetLights: string[] = ['1'];

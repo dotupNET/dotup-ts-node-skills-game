@@ -1,4 +1,4 @@
-import { AnchorMode, ButtonActionMode, ButtonMode, EventReportMode, GameEngineDirectives, RecognizerType } from '../Enumerations';
+import { AnchorMode, ButtonActionMode, ButtonMode, EventReportMode, GameEngineDirectives, RecognizerType } from '../Constants/Enumerations';
 
 // tslint:disable:no-reserved-keywords
 // tslint:disable:max-line-length
