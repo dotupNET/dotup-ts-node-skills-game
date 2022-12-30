@@ -64,7 +64,7 @@
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.6",
     "chai": "^4.2.0",
-    "mocha": "^6.0.2",
+    "mocha": "^10.2.0",
     "dotup-ts-alexa-skill-server": "^0.0.5",
     "gh-pages": "^2.0.1",
     "rimraf": "^2.6.3",
